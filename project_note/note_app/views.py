@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def index(request):
     return render(request,'notes/index.html')
+
+def create_note(request):
+    return render(request,'notes/createNote.html')
