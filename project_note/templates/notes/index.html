@@ -5,9 +5,39 @@
 NOTE | LIST
 {% endblock %}
 
-{% block body_content%}
+    <!--custom css-->
+    {% block custom_css%}
+       .first_div{
+       background-color:#ffffff;
+            height: 500px; 
+            width:700px;
+            margin:50px auto;      
+          border-radius: 5px;
+         box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+         padding:20px;
+         text-align:center;
 
-<h1> this is the index page</h1>
+         a{
+            font-size:20px;
+            text-align:center;
+            text-decoration:none;
+         }
+         a:hover{
+            color:red;
+         }
+       }
+    {% endblock%}
+
+{% block body_content%}
+        <div class="first_div">
+            <a href="">Add Notes</a>
+            <hr>
+
+            <h3>your notes are here.!!!!!!!!!!!!!!!!!!</h3>
+
+
+        </div>
+
 
 {%endblock%}
 
