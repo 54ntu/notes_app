@@ -8,16 +8,56 @@ CREATE | PAGE
 
 <!--custom css-->
 {%block custom_css%}
+  
+    .contain_box{
+        background-color:#e0f2f1;
+        height:400px;
+        max-width:600px;
+        margin: 20px auto;
+        border-radius:10px;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+        text-align:center;
+        
 
-.contain_box{
-    background-color:#e0f2f1;
-    height:500px;
-    max-width:700px;
-    margin: 20px auto;
-    border-radius:10px;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    }
 
-}
+     label{
+            display: block;
+            margin-bottom: 10px;
+            font-size:30px;
+        }
+
+
+         input{
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+
+        textarea{
+            width:100%;
+            padding:10px;
+            border-radius:5px;
+            border:1px solid #ccc;
+            box-sizing:border-box;
+            margin-bottom:20px;
+        }
+
+        .sign_btn{
+            font-size:30px;
+            font-weight:bold;
+            background-color:#b0bec5;
+        }
+
+        .sign_btn:hover{
+            background-color:#69f0ae;
+        }
+
+
 
 
 {% endblock%}
@@ -29,8 +69,14 @@ CREATE | PAGE
 <h1>this is note create page</h1>
 
 <div class="contain_box">
-
-
+   <form >
+            
+        <label for="note_title" > Title of notes</label>
+        <input type="text" id="note_title" name="note_title" placeholder="write your title of notes.....">
+        <label for="note_desc">Notes'description</label>
+        <textarea  id="note_desc" name="note_desc" placeholder="write your notes here!!!!!!!!!!!!....."></textarea>
+        <input type="submit" value="ADD" class="sign_btn" >
+    </form>
 </div>
 
 {% endblock%}
