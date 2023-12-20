@@ -38,22 +38,24 @@ NOTE | LIST
             <hr>
 
             <h3>your notes are here.!!!!!!!!!!!!!!!!!!</h3><br><br>
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                first notes
-              </button>
-            </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                  
+            <form>
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      #1 first notes
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">first notes in detail  Only the main shades need to be provided (unless you wish to further customize light, dark or contrastText), as the other colors will be calculated by createTheme(), as described in the Theme customization section.
+
+                    If you are using the default primary and / or secondary shades then by providing the color object, createTheme() will use the appropriate shades from the material color for main, light and dark.
+                    </div>
+                    <button class="btn btn-sm btn-primary">update notes</button>
+                  </div>
                 </div>
-                <button class="btn btn-sm btn-primary">update notes</button>
               </div>
-          </div>
-        </div>
+           </form>
   </div>
 
 
