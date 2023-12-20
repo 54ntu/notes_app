@@ -69,10 +69,11 @@ CREATE | PAGE
 <h1>this is note create page</h1>
 
 <div class="contain_box">
-   <form  >
+   <form action="{% url 'add-note'%}" method="post" >
+    {% csrf_token%}
             
         <label for="note_title" > Title of notes</label>
-        <input type="text" id="note_title" name="note_title" placeholder="write your title of notes.....">
+            <input type="text" id="note_title" name="note_title" placeholder="write your title of notes.....">
         <label for="note_desc">Notes'description</label>
         <textarea  id="note_desc" name="note_desc" placeholder="write your notes here!!!!!!!!!!!!....."></textarea>
         <input type="submit" value="ADD" class="sign_btn" >
