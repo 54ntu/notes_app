@@ -26,3 +26,16 @@ def AddNote(request):
         return redirect('index')
     return redirect('create-note')
 
+
+def update_notes(request,id):
+    note= NoteModel.objects.get(id=id)
+    context={
+        "note":note,
+    }
+    return render(request,'notes/updatePage.html',context)
+
+def updateData(request):
+    if request.method == "POST":
+        data= request.data
+        if data.is_valid():
+            data.save()

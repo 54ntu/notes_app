@@ -1,0 +1,61 @@
+{% extends "layouts/master.html" %}
+ 
+
+<!-- custom css block-->
+{% block custom_css %}
+
+    form{
+        height:400px;
+        width:400px;
+        background-color:#eeeeee;
+        margin: 20px auto;
+        text-align:center;
+        padding:50px;
+    }
+
+
+    label{
+        display:block;
+        font-size:30px;
+        margin-bottom:10px;
+    }
+
+    input{
+         width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+    }
+
+    button{
+        width:100%;
+        padding:10px;
+        border-radius:5px;
+        border:1px solid #ccc;
+        box-sizing:border-box;
+        font-size:20px;
+        font-weight:bold;
+    }
+
+{% endblock custom_css %}
+
+
+<!--block body content-->
+{% block body_content %}
+
+<form action="{% url 'update_data' %}" method="post">
+    {% csrf_token%}
+    <div>
+        <label for="note_status">Note status</label>
+        <input id="note_status" name="note_status" type="text" value="{{note.status}}" >
+    </div>
+
+    <div>
+        <button>UPDATE</button>
+    </div>
+
+</form>
+
+{% endblock body_content %}

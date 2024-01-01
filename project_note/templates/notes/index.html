@@ -9,7 +9,7 @@ NOTE | LIST
     {% block custom_css%}
        .first_div{
        background-color:#ffffff;
-            height: 500px; 
+            min-height: 500px; 
             width:700px;
             margin:50px auto;      
           border-radius: 5px;
@@ -29,6 +29,12 @@ NOTE | LIST
          .btn{
             margin-bottom:10px;
          }
+
+         h4{
+          margin-bottom:4px;
+          color:red;
+
+         }
        }
     {% endblock%}
 
@@ -40,7 +46,7 @@ NOTE | LIST
             <h3>your notes are here.!!!!!!!!!!!!!!!!!!</h3><br><br>
             {% for val in note%}
 
-            <form>
+            <form action=" {% url 'update' val.id %}">
               <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="flush-headingOne">
@@ -52,7 +58,10 @@ NOTE | LIST
                     <div class="accordion-body">
                       {{val.note_description}}
                     </div>
-                    <button class="btn btn-sm btn-primary">update notes</button>
+                    <h4>
+                      {{val.status}}
+                    </h4>
+                    <button class="btn btn-sm btn-primary" >update notes</button>
                   </div>
                 </div>
               </div>
