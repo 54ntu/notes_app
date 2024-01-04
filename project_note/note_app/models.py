@@ -5,7 +5,8 @@ from django.db import models
 class NoteModel(models.Model):
     note_title = models.CharField(max_length=200, null=False,blank=False)
     note_description= models.TextField(max_length=255, null=False,blank=False)
-    status=models.CharField(max_length =100, default='not completed')
+    status=models.CharField(max_length =100, default="not completed")
+    
 
     def __str__(self):
         return self.note_title +self.note_description +self.status

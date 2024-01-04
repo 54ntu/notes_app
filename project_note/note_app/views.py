@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import NoteModel
+from note_app.forms import noteForm
 
 # Create your views here.
 
@@ -35,7 +36,11 @@ def update_notes(request,id):
     return render(request,'notes/updatePage.html',context)
 
 def updateData(request):
-    if request.method == "POST":
-        data= request.data
-        if data.is_valid():
-            data.save()
+   if request.method == "POST":
+       instance = NoteModel.objects.get(id=request.POST.get("id"))
+       data = noteForm(data= request.POST, instance=instance)
+       print("data : ", data)
+       if data.is_valid():
+           data.save()
+           return redirect('index')
+       return redirect('update')

@@ -7,3 +7,8 @@ class NoteAdminModel(admin.ModelAdmin):
 
 
 admin.site.register(NoteModel,NoteAdminModel)
+
+
+
+#admin panel custoomizing
+admin.site.site_header= "Notes_application"

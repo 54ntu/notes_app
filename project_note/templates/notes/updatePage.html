@@ -45,12 +45,18 @@
 <!--block body content-->
 {% block body_content %}
 
-<form action="{% url 'update_data' %}" method="post">
+<form>
     {% csrf_token%}
+    <input type="hidden" value="{{note.id}}">
     <div>
-        <label for="note_status">Note status</label>
-        <input id="note_status" name="note_status" type="text" value="{{note.status}}" >
+        <label for="note_title">Note title</label>
+        <input id="note_title" name="note_title" type="text" value="{{note.note_title}}" >
     </div>
+    <div>
+        <label for="status">Note status</label>
+        <h2>{{note.status}}</h2>
+        <input id="status" name="status" type="text" value="{{note.status}}" >
+    </div> 
 
     <div>
         <button>UPDATE</button>
